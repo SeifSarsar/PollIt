@@ -1,0 +1,14 @@
+<div class="nodes-form">
+  <div *ngFor="let node of nodes" class="nodes d-flex">
+    <div class="node ">
+      <div class="node-content">{{ node }}</div>
+      <i class="fas fa-times" (click)="deleteNode(node)"></i>
+    </div>
+  </div>
+  <input
+    (keyup)="onKey($event)"
+    class="nodes-input "
+    type="text"
+    placeholder="Add Node"
+  />
+</div>

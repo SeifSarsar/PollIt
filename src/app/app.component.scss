@@ -1,0 +1,99 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ced4da;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0px;
+  width: 250px;
+  height: 100%;
+  border-right: 1px solid #ced4da;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  background-color: white;
+  z-index: 1;
+}
+.sidebar.active {
+  display: block;
+}
+
+.app,
+.sidebar,
+.nav-link,
+.link-name,
+.link-icon {
+  transition: 0.2s ease-in-out;
+}
+
+.app.padding {
+  margin-left: 250px;
+}
+
+#nav-title,
+.fa-bars,
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.nav-link:hover {
+  background-color: #343a40;
+
+  .link-name,
+  .link-icon {
+    color: white;
+  }
+}
+
+.nav-search {
+  display: flex;
+  width: 50%;
+}
+.search-menu {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.search-menu.active {
+  display: block;
+}
+
+.search-button {
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-left: 0px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+}
+.search-input {
+  border: 1px solid #ced4da;
+  padding: 5px 10px;
+  border-right: 0px;
+  outline: none;
+  border-radius: 5px 0px 0px 5px;
+  width: 100%;
+}
+
+.search-mode {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.1s ease-in-out;
+}
+
+.search-mode.active {
+  color: white;
+  background-color: #343a40;
+}

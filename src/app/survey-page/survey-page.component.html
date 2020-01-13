@@ -1,0 +1,45 @@
+<div *ngIf="survey">
+  <app-survey-chart
+    class="chart"
+    [survey]="survey"
+    [votes]="votes"
+  ></app-survey-chart>
+
+  <div class="survey-actions" *ngIf="user">
+    <div
+      *ngIf="!userVote; else voted"
+      class="survey-action btn btn-outline-dark"
+      (click)="openWindowContent()"
+    >
+      Add Vote
+    </div>
+
+    <ng-template #voted>
+      <div class="survey-action btn btn-outline-dark" (click)="deleteVote()">
+        Delete Vote
+      </div>
+    </ng-template>
+
+    <div
+      *ngIf="user && user.username == survey.username"
+      class="survey-action btn btn-outline-dark"
+      (click)="deleteSurvey()"
+    >
+      Delete Survey
+    </div>
+  </div>
+  <div *ngIf="user" class="votes">
+    <app-vote
+      *ngFor="let vote of votes"
+      [vote]="vote"
+      [userId]="user.id"
+    ></app-vote>
+  </div>
+</div>
+
+<app-vote-form
+  *ngIf="content == 'vote'"
+  [choices]="survey.choices"
+  [idSurvey]="survey._id"
+  (voteEvent)="voteCreated($event)"
+></app-vote-form>

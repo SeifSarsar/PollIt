@@ -1,0 +1,24 @@
+.chart,
+.votes {
+  margin: 0 auto;
+}
+
+.survey-title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.votes {
+  width: 50%;
+}
+
+.survey-actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  width: 70%;
+}
+
+.survey-action {
+  width: 25%;
+}

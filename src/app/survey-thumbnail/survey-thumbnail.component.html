@@ -1,0 +1,12 @@
+<div class="survey" *ngIf="survey" (click)="openSurvey(survey._id)">
+  <div class="survey-line">
+    <div class="survey-title">{{ survey.title }}</div>
+    <div class="survey-popularity">
+      <span>{{ survey.popularity }}</span> <i class="fas fa-star"></i>
+    </div>
+  </div>
+  <div class="survey-line">
+    <div class="survey-author">{{ survey.username }}</div>
+    <div class="survey-date">{{ survey.date | date }}</div>
+  </div>
+</div>

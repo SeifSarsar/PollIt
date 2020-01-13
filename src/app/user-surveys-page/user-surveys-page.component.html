@@ -1,0 +1,35 @@
+<div class="user-surveys">
+  <div class="surveys-container">
+    <div class="ml-2 surveys-title">Created Surveys:</div>
+    <div
+      *ngIf="createdSurveys && createdSurveys.length > 0; else noResult"
+      class="surveys"
+    >
+      <app-survey-thumbnail
+        *ngFor="let survey of createdSurveys"
+        [survey]="survey"
+        class="survey-thumbnail"
+      ></app-survey-thumbnail>
+    </div>
+  </div>
+  <div class="surveys-container">
+    <div class="ml-2 surveys-title">Participated Surveys:</div>
+
+    <div
+      *ngIf="
+        participatedSurveys && participatedSurveys.length > 0;
+        else noResult
+      "
+      class="surveys"
+    >
+      <app-survey-thumbnail
+        *ngFor="let survey of participatedSurveys"
+        [survey]="survey"
+        class="survey-thumbnail"
+      ></app-survey-thumbnail>
+    </div>
+  </div>
+  <ng-template #noResult>
+    <div class="surveys-title">Did not find any survey...</div>
+  </ng-template>
+</div>

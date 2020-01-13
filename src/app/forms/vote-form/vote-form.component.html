@@ -1,0 +1,46 @@
+<div class="window">
+  <div class="window-content">
+    <div
+      class="window-header d-flex justify-content-between align-items-center"
+      (click)="closeWindowContent()"
+    >
+      <div class="window-title">
+        Vote
+      </div>
+      <i class="fas fa-times"></i>
+    </div>
+    <form [formGroup]="form" class="window-form" (ngSubmit)="vote()">
+      <div class="radio-container mt-2">
+        <div
+          class="radio-group"
+          *ngFor="let voteChoice of choices"
+          [ngClass]="{ checked: choice == voteChoice }"
+          (click)="setChoice(voteChoice)"
+        >
+          <div class="radio-checkmark"><i class="fas fa-times"></i></div>
+          <div class="radio-text">{{ voteChoice }}</div>
+        </div>
+      </div>
+      <div class="note">You must make a vote</div>
+      <div class="inputGroup mt-2">
+        <textarea
+          class="form-control"
+          formControlName="comment"
+          placeholder="Explain your vote..."
+        ></textarea>
+        <div class="feedback">
+          <div *ngIf="form.controls.comment.errors && form.touched">
+            <div *ngIf="form.controls.comment.errors.maxlength">
+              Comment is longer than 600 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <input
+        type="submit"
+        value="Vote"
+        class="btn btn-outline-dark w-100 mt-2"
+      />
+    </form>
+  </div>
+</div>

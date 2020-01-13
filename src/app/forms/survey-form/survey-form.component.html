@@ -1,0 +1,58 @@
+<div class="window">
+  <div class="window-content">
+    <div
+      class="window-header d-flex justify-content-between align-items-center"
+      (click)="closeWindowContent()"
+    >
+      <div class="window-title">
+        Survey
+      </div>
+      <i class="fas fa-times"></i>
+    </div>
+    <form [formGroup]="form" class="window-form">
+      <div class="inputGroup mt-2">
+        <input
+          type="text"
+          formControlName="title"
+          class="form-control"
+          placeholder="Title"
+        />
+        <div class="feedback">
+          <div *ngIf="form.controls.title.errors && form.touched">
+            <div *ngIf="form.controls.title.errors.required">
+              Title is required
+            </div>
+            <div *ngIf="form.controls.title.errors.minlength">
+              Title is shorter than 12 characters
+            </div>
+            <div *ngIf="form.controls.title.errors.maxlength">
+              Title is longer than 100 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>Survey Choices</div>
+      <app-nodes-form
+        id="choices-input"
+        [maxNodes]="8"
+        (nodesEvent)="getChoices($event)"
+      ></app-nodes-form>
+      <div class="note">
+        You need at least 2 choices to create a survey
+      </div>
+      <div>Tags</div>
+      <app-nodes-form
+        id="tags-input"
+        [maxNodes]="4"
+        (nodesEvent)="getTags($event)"
+      ></app-nodes-form>
+
+      <input
+        type="button"
+        (click)="createSurvey()"
+        value="Create Survey"
+        class="btn btn-outline-dark w-100 mt-2"
+      />
+    </form>
+  </div>
+</div>

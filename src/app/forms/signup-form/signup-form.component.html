@@ -1,0 +1,97 @@
+<div class="window">
+  <div class="window-content">
+    <div
+      class="window-header d-flex justify-content-between align-items-center"
+      (click)="closeWindowContent()"
+    >
+      <div class="window-title">
+        Sign Up
+      </div>
+      <i class="fas fa-times"></i>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="signUp()" class="window-form">
+      <div class="inputGroup mt-2">
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          placeholder="Email"
+        />
+        <div class="feedback">
+          <div *ngIf="form.controls.email.errors && form.touched">
+            <div *ngIf="form.controls.email.errors.required">
+              Email is required
+            </div>
+            <div *ngIf="form.controls.email.errors.email">
+              Invalid email syntax
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputGroup mt-2">
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          placeholder="Username"
+        />
+        <div class="feedback">
+          <div *ngIf="form.controls.username.errors && form.touched">
+            <div *ngIf="form.controls.username.errors.required">
+              Username is required
+            </div>
+            <div *ngIf="form.controls.username.errors.minlength">
+              Username is shorter than 5 characters
+            </div>
+            <div *ngIf="form.controls.username.errors.maxlength">
+              Username is longer than 30 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inputGroup mt-2">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Password"
+        />
+        <div class="feedback">
+          <div *ngIf="form.controls.password.errors && form.touched">
+            <div *ngIf="form.controls.password.errors.required">
+              Password is required
+            </div>
+            <div *ngIf="form.controls.password.errors.minlength">
+              Password is shorter than 6 characters
+            </div>
+            <div *ngIf="form.controls.password.errors.maxlength">
+              Password is longer than 30 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inputGroup mt-2">
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          class="form-control"
+          placeholder="Confirm Password"
+        />
+        <div class="feedback">
+          <div *ngIf="form.errors && form.touched">
+            <div *ngIf="form.errors.notMatch">
+              {{ form.errors.notMatch }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input
+        type="submit"
+        value="Sign Up"
+        class="btn btn-outline-dark w-100 mt-2"
+      />
+    </form>
+  </div>
+</div>

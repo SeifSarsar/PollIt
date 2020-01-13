@@ -1,0 +1,27 @@
+.user-surveys {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.surveys-container {
+  width: 50%;
+}
+.surveys-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.surveys {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.survey-thumbnail {
+  margin: 15px 10px;
+}
+
+.survey-thumbnail:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}

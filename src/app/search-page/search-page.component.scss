@@ -1,0 +1,18 @@
+.search-text {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.surveys {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.survey-thumbnail {
+  margin: 15px 10px;
+}
+
+.survey-thumbnail:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}

@@ -1,0 +1,33 @@
+.vote {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.vote-header,
+.vote-footer {
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+}
+
+.vote-choice {
+  font-size: 18px;
+}
+.vote-comment {
+  padding: 5px 15px 0px 15px;
+}
+
+.fa-heart {
+  font-size: 18px;
+  margin-left: 5px;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.fa-heart.liked {
+  color: #dc3545;
+}
+.fa-heart:hover {
+  color: #dc3545;
+}

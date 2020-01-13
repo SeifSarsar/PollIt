@@ -1,0 +1,36 @@
+.survey {
+  width: 100%;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.survey-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.survey-popularity {
+  display: flex;
+  align-items: center;
+}
+.survey-title {
+  font-size: 18px;
+  width: auto;
+}
+
+.survey-author,
+.survey-title {
+  margin-right: 20px;
+}
+
+.survey-author,
+.survey-date {
+  font-size: 11px;
+}
+
+.fa-star {
+  font-size: 12px;
+  margin-left: 5px;
+}

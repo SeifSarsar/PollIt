@@ -1,0 +1,19 @@
+<div class="vote" *ngIf="vote.comment != ''">
+  <div class="vote-header">
+    <div class="vote-choice">{{ vote.choice }}</div>
+    <div class="vote-likes">
+      <span>{{ vote.likes.length }}</span
+      ><i
+        class="fas fa-heart"
+        [ngClass]="{ liked: liked == true }"
+        (click)="toggleLike()"
+      ></i>
+    </div>
+  </div>
+  <div class="vote-comment">{{ vote.comment }}</div>
+
+  <div class="vote-footer">
+    <div class="vote-author">{{ vote.username }}</div>
+    <div class="vote-date">{{ vote.date | date }}</div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.nodes-form {
+  display: flex;
+  border: 1px solid #ced4da;
+  padding: 5px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.node {
+  padding: 5px 10px;
+  margin: 3px;
+  border: 1px solid #343a40;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.node:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.nodes-input {
+  margin: 3px;
+  border: 0px;
+  outline: none;
+  height: 36px;
+}
